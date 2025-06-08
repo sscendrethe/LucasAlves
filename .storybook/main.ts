@@ -1,5 +1,5 @@
-import { mergeConfig } from 'vite';
-import path from 'path';
+import { mergeConfig } from 'vite'
+import path from 'path'
 import type { StorybookConfig } from '@storybook/nextjs-vite'
 
 const config: StorybookConfig = {
@@ -25,8 +25,8 @@ const config: StorybookConfig = {
           },
         },
       },
-    });
+    })
   },
-};
+}
 
 export default config
