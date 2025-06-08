@@ -1,16 +1,16 @@
 import { Icon } from './index'
 import { disableTable } from '@/storybook-docs/argTypes'
-import { IconBook } from '@tabler/icons-react'
+import { IconBulb } from '@tabler/icons-react'
 
 export default {
-  title: 'Ions/Icon',
+  title: 'ions/Icon',
   component: Icon,
   parameters: {
     layout: 'centered',
   },
   args: {
-    Icon: IconBook,
-    color: '#8c4949',
+    Icon: IconBulb,
+    color: '#FF8E07',
     size: 40,
     stroke: 2,
   },
