@@ -69,8 +69,8 @@
     }
 
     a {
-      @include mont();
-      font-weight: 200 !important;
+       & {@include mont();
+        font-weight: 200 !important};
     }
   }
 
