@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Modal } from "antd";
 import { Heading } from "@/components/atoms/Heading";
 import { Text } from "@/components/atoms/Text";
-import { Button } from "@/components/atoms/Buttonstemp";
+import { Button } from "@/components/atoms/Buttons";
 import { Gallery } from "@/components/organisms/Gallery";
 import Link from "next/link";
 import styles from "./styles.module.scss";

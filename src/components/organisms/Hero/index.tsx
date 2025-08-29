@@ -3,7 +3,7 @@
 import { useRouter, usePathname } from 'next/navigation'
 import { IconArrowRight, IconUsers, IconSparkles } from '@tabler/icons-react'
 import { Text } from '@/components/atoms/Text'
-import { Button } from '@/components/atoms/Buttonstemp'
+import { Button } from '@/components/atoms/Buttons'
 import { Heading } from '@/components/atoms/Heading'
 import { NeonArcPair } from '@/components/molecules/NeonArcPair' // ⟵ novo import
 import styles from './styles.module.scss'
