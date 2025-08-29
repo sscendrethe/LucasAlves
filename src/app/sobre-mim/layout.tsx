@@ -1,5 +1,13 @@
 import type { ReactNode } from "react";
 import styles from "./layout.module.scss";
+import { Montserrat } from "next/font/google";
+
+const montserrat = Montserrat({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800", "900"],
+  variable: "--font-mont", // cria uma CSS variable
+  display: "swap",
+});
 
 export default function Layout({
   children,
@@ -9,7 +17,7 @@ export default function Layout({
   modal: ReactNode;
 }) {
   return (
-    <div className={styles.container}>
+    <div className={`${styles.container} ${montserrat.variable}`}>
       {children}
       {modal}
     </div>
