@@ -8,4 +8,10 @@
   transition: filter .2s ease, transform .2s ease;
   pointer-events: none; /* evita cliques no fundo enquanto o modal está aberto */
 }
+:root {
+  --font-mont: 'Montserrat', sans-serif;
+}
 
+.container {
+  font-family: var(--font-mont);
+}
