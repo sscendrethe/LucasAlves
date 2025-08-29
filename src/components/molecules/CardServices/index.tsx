@@ -2,7 +2,7 @@
 
 import React from "react";
 import styles from "./styles.module.scss";
-import { Button } from "@/components/atoms/Buttons";
+import { Button } from "@/components/atoms/Buttonstemp";
 import { Icon as CustomIcon } from "@/components/ions/Icon";
 import {
   IconArrowRight,

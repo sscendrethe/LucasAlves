@@ -5,7 +5,7 @@
 .link {
   display: flex;
   align-items: center;
-  gap: 1.2rem;
+  gap: 1.2rem; //Button
   border: none;
   font-size: 1.6rem;
   line-height: 2rem;
@@ -13,7 +13,6 @@
 
   @include screen-size('mobile') {
     font-size: 1.2rem;
-
   }
 
   @include mont();

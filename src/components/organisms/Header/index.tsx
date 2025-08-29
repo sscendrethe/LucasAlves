@@ -5,7 +5,7 @@ import { usePathname, useRouter } from 'next/navigation'
 import { useEffect, useState } from 'react'
 import { IconMenu2, IconX } from '@tabler/icons-react'
 import { Logo } from '@/components/ions/Logo'
-import { Button } from '@/components/atoms/Buttons'
+import { Button } from '@/components/atoms/Buttonstemp'
 import { NavigationItem } from '@/components/organisms/Footer'
 import styles from './styles.module.scss'
 

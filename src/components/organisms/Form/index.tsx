@@ -13,7 +13,7 @@ import {
   IconMessage,
 } from '@tabler/icons-react'
 import { Heading } from '@/components/atoms/Heading'
-import { Button } from '@/components/atoms/Buttons'
+import { Button } from '@/components/atoms/Buttonstemp'
 import { Input, FormData } from '@/components/molecules/Input'
 import { Textarea } from '@/components/molecules/Textarea'
 import styles from './styles.module.scss'

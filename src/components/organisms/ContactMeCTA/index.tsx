@@ -1,5 +1,5 @@
 import { IconArrowRight } from '@tabler/icons-react'
-import { Button } from '@/components/atoms/Buttons'
+import { Button } from '@/components/atoms/Buttonstemp'
 import styles from './styles.module.scss'
 import { Logo } from '@/components/ions/Logo'
 
