@@ -3,14 +3,6 @@
 
 @mixin mont() {
   font-family: 'Montserrat', sans-serif;
-
-  @media (min-width: 768px) and (max-width: 1023px) {
-    @content;
-  }
-
-  @media (min-width: 1200px) {
-    @content;
-  }
 }
 
 @mixin direction() {
