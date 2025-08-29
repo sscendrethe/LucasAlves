@@ -2,3 +2,10 @@
   display: flex;
   flex-direction: column;
 }
+:root {
+  --font-mont: 'Montserrat', sans-serif;
+}
+
+.container {
+  font-family: var(--font-mont);
+}

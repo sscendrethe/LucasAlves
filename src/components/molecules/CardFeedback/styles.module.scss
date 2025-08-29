@@ -12,11 +12,6 @@
   // Mantém seu fundo
   background-color: vars.$white;
   @include backgroundColor();
-
-  // Borda sutil e fixa
-  
-
-  // Efeitos visuais
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
