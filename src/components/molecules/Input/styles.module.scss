@@ -1,0 +1,6 @@
+@use '../../../styles/_mixins' as *;
+@use '../../../styles/variables' as vars;
+
+.field {
+  @include defaultInput();
+}

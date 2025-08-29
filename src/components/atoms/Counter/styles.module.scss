@@ -1,0 +1,28 @@
+@use '../../../styles/variables' as vars;
+@use '../../../styles/_mixins' as *;
+
+.counter {
+  font-size: 3rem; // ou o tamanho que quiser
+  font-weight: 800;
+  color: vars.$orange;
+  @include mont(); // se quiser usar a fonte do seu mixin
+  
+}
+
+.hero__stats {
+  display: flex;
+  gap: 2rem;
+  margin-top: 2rem;
+
+  span {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: vars.$orange;
+    white-space: nowrap;
+    @include mont();
+  }
+
+  @include screen-size('desktop') {
+    gap: 3rem;
+  }
+}

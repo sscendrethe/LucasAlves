@@ -1,5 +1,9 @@
 @use '../../../styles/mixins' as *;
 
 .text {
+  @include colors();
+
   @include align();
+
+  @include weight();
 }

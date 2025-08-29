@@ -1,0 +1,198 @@
+@use '../../../styles/_mixins' as *;
+@use '../../../styles/variables' as vars;
+
+.card {
+  display: flex;
+  flex-direction: column;
+  border-radius: 0.8rem;
+  overflow: hidden;
+  width: 4rem;
+  height: 6rem;
+  position: relative;
+  padding: 6rem 6rem 6rem 6rem;
+  box-shadow: 0 10px 20px rgba(185, 89, 29, 0.352);
+
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(221, 193, 176, 0.352);
+  }
+
+  /* mantém o conteúdo no rodapé do card */
+  justify-content: flex-end;
+
+  @include screen-size('mobile') {
+    width: 6rem;
+    height: 3rem;
+  }
+    &__arc{
+    width: 14rem;
+    height: 8rem;
+    margin-left: -2rem;
+    @include screen-size('mobile') {
+      width: 12rem;
+  }
+  }
+  /* === CAMADA DE MÍDIA (fundo) === */
+  &__media {
+    position: absolute;
+    inset: 0;           
+    z-index: 0;
+  }
+
+  &__video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;    /* cobre sem distorcer */
+    pointer-events: none; /* clique passa para o card/link */
+    filter: brightness(.9);
+  }
+
+  &__image {
+    @include cardAnimation();
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center top;
+    z-index: 0;
+  }
+
+  /* === TEXTO POR CIMA === */
+  &__heading {
+    position: relative; /* fica acima da mídia */
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    color: vars.$softorange;
+
+    /* puxa o bloco para baixo/esquerda sem alterar tamanhos do card */
+    margin-top: auto;
+    margin-left: -4rem;
+    margin-bottom: -6rem;
+
+    @include screen-size('mobile') {
+      margin-left: -3rem;
+      margin-bottom: -7rem;
+    }
+  }
+
+  &__text {
+    font-size: 1rem;
+    color: vars.$white;
+    @include mont();
+    white-space: normal; 
+    word-wrap: break-word;
+    font-size: 1rem;
+    margin-left: 5rem;
+    margin-right: -4rem;
+    margin-bottom: -6.5rem;
+    
+    @include screen-size('desktop') {
+      margin-left: 5rem;
+      margin-right: -5rem;
+      margin-bottom: -7.5rem;
+    }
+  }
+
+  &__title {
+    display: flex;
+    align-items: center;
+    gap: 0.2rem;
+    margin-bottom: -3rem;
+    margin-left: 5rem;
+    @include screen-size('desktop') {
+      font-size: 1rem;
+      margin-bottom: -3.2rem;
+      margin-left: 5rem;
+    }
+  }
+
+  &__projectName {
+    @include mont();
+    font-size: 1.2rem;
+    font-weight: 700;
+
+    @include screen-size('desktop') {
+      font-size: 1.6rem;
+    }
+  }
+
+  a {
+    @include reset-link;
+  }
+    &:is(a) {
+    text-decoration: none;
+    color: inherit;
+  }
+  &:is(a):link,
+  &:is(a):visited,
+  &:is(a):hover,
+  &:is(a):active,
+  &:is(a):focus {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  &__heading,
+  &__heading * {
+    text-decoration: none !important;
+  }
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 0;                 /* acima da mídia, abaixo do texto */
+    pointer-events: none;
+    border-radius: inherit;
+    background: rgba(255, 255, 255, 0.16); /* leve branqueado geral */
+    transition: background .25s ease;
+  }
+
+  /* --- degradê mais claro no RODAPÉ --- */
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0; right: 0; bottom: 0;
+    height: 100%;                /* quão alto o degradê sobe */
+    z-index: 0;
+    pointer-events: none;
+    border-radius: inherit;
+
+    /* clareia a base e some em direção ao topo */
+    background:
+      linear-gradient(
+        to top,
+        rgba(243, 137, 76, 0.422) 0%,
+        rgba(243, 137, 76, 0.422) 25%,
+        rgba(243, 137, 76, 0.422) 75%,
+        rgba(243, 137, 76, 0.422) 100%
+      );
+    transition: opacity .25s ease, background .25s ease;
+  }
+
+  /* opcional: intensifica no hover */
+  &:hover::before { background: rgba(255, 255, 255, 0.2); }
+  &:hover::after {
+    background:
+      linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.422) 0%,
+        rgba(255, 255, 255, 0.212) 35%,
+        rgba(237, 219, 219, 0.37) 60%,
+        rgba(255, 255, 255, 0.532) 100%
+      );
+  }
+
+  /* mídia por baixo (mantém seu código) */
+  &__media { position: absolute; inset: 0; z-index: 0; }
+  &__video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; pointer-events:none; }
+  &__image { position: absolute; inset: 0; background-size: cover; background-position: center top; z-index: 0; }
+
+  /* texto por cima */
+  &__heading { position: relative; z-index: 1; }
+}

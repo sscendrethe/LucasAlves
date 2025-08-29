@@ -1,0 +1,25 @@
+@use '../../../styles/_mixins' as *;
+@use '../../../styles/variables' as vars;
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2.4rem;
+  border: 0.1rem solid vars.$white;
+  border-radius: 1.6rem;
+  max-width: 9.6rem;
+  transition: all 0.8s ease-in-out;
+
+  svg {
+    transition: all 0.8s ease-in-out;
+  }
+
+  &:hover {
+    border: 0.1rem solid vars.$darkgray;
+
+    svg {
+      stroke: vars.$darkgray;
+    }
+  }
+}

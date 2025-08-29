@@ -1,0 +1,134 @@
+@use '../../../styles/_mixins' as *;
+@use '../../../styles/variables' as vars;
+
+// ajuste fino do painel
+$panel-radius: 20px;      // raio dos cantos
+$panel-shadow: 0 18px 40px -12px rgba(0,0,0,.18);
+
+.projects {
+  --intro-shift: 0rem;
+  @include mont();
+  @include screen-size('mobile') {
+    --intro-shift: 0rem;
+    padding: 1rem .5rem;   // 1rem em cima/baixo, 1.5rem nos lados
+  }
+
+  max-width: 1260px;
+  width: 100%;
+  box-sizing: border-box;      /* <<< padding dentro do max-width */
+  position: relative;
+  border-radius: $panel-radius;
+  overflow: hidden;
+  padding: (10rem 5rem 2rem 5rem); /* mesmo padding do Case */
+  box-shadow: $panel-shadow;
+  background:
+    radial-gradient(120% 100% at 0% 0%,
+      rgba(244, 229, 229, 0.607) 0%,
+      rgba(254, 248, 248, 0.685) 28%,
+      rgba(239, 223, 223, 0.685) 60%),
+    linear-gradient(180deg,
+      rgba(0,0,0,.02) 0%,
+      rgba(0,0,0,.00) 60%),
+    #fff;
+
+  :global(#more-projects-title) {
+    position: relative;
+    z-index: 1;
+    color: vars.$orange;
+    margin-left: var(--intro-shift);
+
+    @include screen-size('mobile') {
+      margin-left: 0;
+      text-align: left;
+      display: block;
+    }
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    border-radius: inherit;
+    box-shadow:
+      inset 0 1px 0 rgba(#fff, .7),
+      inset 0 -1px 0 rgba(0,0,0,.04);
+  }
+
+  @include screen-size('desktop') {
+    padding: clamp(20px, 2.5vw, 8px);
+  }
+
+  /* ----- Intro ----- */
+  &__intro {
+    display: flex;
+    flex-direction: column;
+    font-size: 1.2rem;
+    max-width: 100%;
+    margin-left: 3rem;
+    padding-left: var(--intro-shift);
+
+
+    :global(h5) {
+      margin: 0 0 .5rem 0;
+      overflow-wrap: anywhere;
+      hyphens: auto;
+    }
+
+    :global(p) {
+      margin: .5rem 0 0 0;
+      line-height: 1.5;
+      overflow-wrap: anywhere;
+      word-break: normal;
+      hyphens: auto;
+      white-space: normal;
+      color: rgba(0,0,0,.68);
+    }
+
+    @include screen-size('mobile') {
+      margin-left: 1rem;
+      padding-left: 2rem;
+      max-width: 100%;
+      text-align: left;
+      font-size: 1rem;
+
+      :global(h5) { margin: 0 0 .35rem 0; }
+      :global(p)  { margin: .35rem 0 0 0; line-height: 1.45; }
+    }
+  }
+
+  /* ----- Grid dos cards ----- */
+  &__container {
+    display: grid;
+    width: 100%;
+    max-width: 1200px;
+    margin: 3rem auto 0;
+    margin-left: 10rem;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    align-items: stretch;
+    gap: 0rem;
+
+    @include screen-size('tablet') {
+      max-width: 900px;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: .8rem;
+    }
+
+    @include screen-size('mobile') {
+      max-width: 900px;
+      margin: 1rem auto 0;
+      grid-template-columns: 1fr;
+      gap: .7rem;
+      justify-items: center;
+      box-sizing: border-box;
+      padding: 0;
+    }
+  }
+
+  /* ===== MOBILE geral do painel ===== */
+  @include screen-size('mobile') {
+    width: 100%;
+    max-width: 100%;
+    border-radius: 16px;
+  }
+}

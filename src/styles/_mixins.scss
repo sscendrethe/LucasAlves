@@ -1,3 +1,66 @@
+@use './variables' as vars;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+@mixin mont() {
+  font-family: 'Montserrat', sans-serif;
+
+  @media (min-width: 768px) and (max-width: 1023px) {
+    @content;
+  }
+
+  @media (min-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin direction() {
+  &--row {
+    flex-direction: row;
+  }
+
+  &--row-reverse {
+    flex-direction: row-reverse;
+  }
+}
+
+@mixin defaultInput() {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  @include mont();
+  color: vars.$softorange;
+  font-weight: 600;
+  font-size: 1rem;
+
+  @include screen-size('desktop-small') {
+    font-size: 1rem;
+  }
+
+  .field__container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0 0 0 1rem;
+    border: 0.1rem solid vars.$darkgray;
+    border-radius: 0.8rem;
+  }
+
+  .field__item {
+    width: 100%;
+    padding: 2rem 1rem;
+  }
+
+  .field__inputError {
+    border: 0.1rem solid vars.$orange;
+  }
+
+  .field__error {
+    color: vars.$orange;
+    font-weight: 500;
+    font-size: 1rem;
+  }
+}
+
 @mixin align() {
   &--left {
     text-align: left;
@@ -6,3 +69,332 @@
     text-align: center;
   }
 }
+@mixin reset-link {
+  color: inherit;
+  text-decoration: none;
+
+  &:visited,
+  &:hover,
+  &:active {
+    color: inherit;
+    text-decoration: none;
+  }
+}
+@mixin cardAnimation() {
+  transition: all 0.8s;
+  background: center/cover no-repeat;
+  position: absolute;
+  inset: 0;
+
+  &:hover {
+    transform: scale(1.08);
+  }
+
+  &::before {
+    background: linear-gradient(
+      0deg,
+      rgb(27, 16, 7) 0%,
+      rgba(54, 46, 41, 0.4) 100%
+    );
+    inset: 0;
+    content: '';
+    position: absolute;
+  }
+}
+
+@mixin weight() {
+  &--300 {
+    font-weight: 300;
+  }
+
+  &--400 {
+    font-weight: 400;
+  }
+
+  &--500 {
+    font-weight: 500;
+  }
+
+  &--600 {
+    font-weight: 600;
+  }
+
+  &--700 {
+    font-weight: 700;
+  }
+
+  &--800 {
+    font-weight: 800;
+  }
+
+  &--900 {
+    font-weight: 900;
+  }
+}
+
+@mixin backgroundColor() {
+  &--white {
+    background-color: vars.$white !important;
+  }
+  &--black {
+    background-color: vars.$black !important;
+  }
+  &--softgray {
+    background-color: vars.$softgray !important;
+  }
+  &--gray {
+    background-color: vars.$gray !important;
+  }
+  &--darkgray {
+    background-color: vars.$darkgray !important;
+  }
+  &--orange {
+    background-color: vars.$orange !important;
+  }
+    &--vividorange {
+    background-color: vars.$vividorange !important;
+  }
+  &--softorange {
+    background-color: vars.$softorange !important;
+  }
+  &--verysoftorange {
+    background-color: vars.$verysoftorange !important;
+  }
+  &--darkblue {
+    background-color: vars.$darkblue !important;
+  }
+  &--blue {
+    background-color: vars.$blue !important;
+  }
+  &--softblue {
+    background-color: vars.$softblue !important;
+  }
+}
+
+@mixin colors() {
+  &--white {
+    color: vars.$white !important;
+  }
+  &--black {
+    color: vars.$black !important;
+  }
+  &--softgray {
+    color: vars.$softgray !important;
+  }
+  &--gray {
+    color: vars.$gray !important;
+  }
+  &--darkgray {
+    color: vars.$darkgray !important;
+  }
+  &--orange {
+    color: vars.$orange !important;
+  }
+    &--vividorange {
+    color: vars.$vividorange !important;
+  }
+  &--softorange {
+    color: vars.$softorange !important;
+  }
+  &--verysoftorange {
+    color: vars.$verysoftorange !important;
+  }
+  &--darkblue {
+    color: vars.$darkblue !important;
+  }
+  &--blue {
+    color: vars.$blue !important;
+  }
+  &--softblue {
+    color: vars.$softblue !important;
+  }
+}
+@mixin buttonVariants() {
+  &--primary {
+    @include buttonStyles('primary');
+    @include screen-size('mobile'){
+      font-size: 1rem;
+    };
+
+    &:hover,
+    &:focus {
+      background-color: vars.$orange;;
+      color: white;
+      border: none;
+    }
+  }
+
+  &--secondary {
+    @include buttonStyles('secondary');
+    @include screen-size('mobile'){
+      font-size: 1rem;
+    };
+    &:hover,
+    &:focus {
+      color: vars.$orange;
+      border-color: vars.$orange;
+    }
+  }
+
+  &--tertiary {
+    font-weight: 800;
+    color: vars.$white;
+    background-color: vars.$orange;
+    border: 1px solid vars.$orange;
+        @include screen-size('mobile'){
+      font-size: 1rem;
+    };
+
+    &:hover,
+    &:focus {
+      color: vars.$orange;
+      background-color: vars.$white;
+    }
+  }
+}
+@mixin buttonStyles($level) {
+  $secondary-background-color: transparent;
+  $secondary-color: vars.$white;
+  $secondary-border-color: vars.$orange;
+
+  @if $level == 'primary' {
+    background-color: transparent;
+    color: vars.$orange;
+    border: 0.1rem solid orange;
+  } @else if $level == 'secondary' {
+    background-color: $secondary-background-color;
+    color: $secondary-color;
+    border: 0.1rem solid $secondary-border-color;
+  }
+}
+@mixin buttonWithIconDirections() {
+  &--right {
+    flex-direction: row;
+  }
+
+  &--left {
+    flex-direction: row-reverse;
+  }
+}
+@mixin headings() {
+  &--h1 {
+    font-size: 3.2rem;
+    @include screen-size('tablet') {
+      font-size: 3.6rem;
+    }
+    @include screen-size('desktop') {
+      font-size: 4rem;
+    }
+  }
+
+  &--h2 {
+    font-size: 2.8rem;
+
+    @include screen-size('tablet') {
+      font-size: 3.2rem;
+    }
+    @include screen-size('desktop') {
+      font-size: 3.8rem;
+    }
+  }
+
+  &--h3 {
+    font-size: 2.4rem;
+
+    @include screen-size('tablet') {
+      font-size: 2.8rem;
+    }
+
+    @include screen-size('desktop') {
+      font-size: 3.2rem;
+    }
+  }
+
+  &--h4 {
+    font-size: 2rem;
+
+    @include screen-size('tablet') {
+      font-size: 2.4rem;
+    }
+
+    @include screen-size('desktop') {
+      font-size: 2.8rem;
+    }
+  }
+
+  &--h5 {
+    font-size: 1.6rem;
+
+    @include screen-size('tablet') {
+      font-size: 2rem;
+    }
+
+    @include screen-size('desktop') {
+      font-size: 2.4rem;
+    }
+  }
+
+  &--h6 {
+    font-size: 1.2rem;
+
+    @include screen-size('tablet') {
+      font-size: 1.6rem;
+    }
+
+    @include screen-size('desktop') {
+      font-size: 2rem;
+    }
+  }
+}
+
+@mixin layoutDefault() {
+  max-width: 144rem;
+  margin: 0 auto;
+  margin-left: -4rem;
+  padding: 4rem 3.5rem;
+
+  @include screen-size('desktop') {
+    padding: 4rem;
+  }
+}
+
+@mixin defaultText() {
+  font-size: 1.6rem;
+  line-height: normal;
+  letter-spacing: 0.05rem;
+
+  @include screen-size('tablet') {
+    font-size: 1.8rem;
+  }
+
+  @include screen-size('desktop') {
+    font-size: 2rem;
+  }
+    @include screen-size('mobile') {
+    font-size: 1.2rem;
+  }
+}
+@mixin screen-size($breakpoint) {
+  @if $breakpoint == 'mobile' {
+    @media (max-width: 767px) {
+      @content;
+    }
+  } @else if $breakpoint == 'tablet' {
+    @media (min-width: 768px) and (max-width: 1023px) {
+      @content;
+    }
+  } @else if $breakpoint == 'desktop-md' {
+    @media (max-width: 1199px) {
+      @content;
+    }
+  } @else if $breakpoint == 'desktop' {
+    @media (min-width: 1200px) {
+      @content;
+    }
+  }
+}
+
+@mixin layoutCard {
+
+}
+

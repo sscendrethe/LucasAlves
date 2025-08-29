@@ -1,0 +1,105 @@
+@use '../../../styles/_mixins' as *;
+@use '../../../styles/variables' as vars;
+
+.article {
+  display: flex;
+  @include layoutDefault();
+  padding: 1rem 1rem 1rem 7rem;
+
+  @include screen-size('desktop') {
+    align-items: flex-start;
+    padding: 1rem 1rem 1rem 8rem;
+  }
+
+  .article__contentWrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 1050px;
+
+    @include screen-size('desktop') {
+      flex-direction: row;
+      align-items: center;
+      justify-content: flex-start;
+      margin-left: 1rem;
+    }
+
+    @include screen-size('mobile') {
+      font-size: 1rem;
+      max-width: 1200px;
+    }
+
+    @include screen-size('tablet') {
+      font-size: 3rem;
+      max-width: 800px;
+    }
+  }
+
+  .article__leftContent {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    flex: 1;
+  }
+
+  .article__mediaWrapper {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    flex: 1;
+
+    .article__cardsWrapper {
+      margin-top: 4rem; // você pode ajustar esse valor
+    }
+
+    @include screen-size('desktop') {
+      justify-content: flex-end;
+    }
+  }
+
+  &__heading {
+    display: flex;
+    flex-direction: column;
+
+    @include screen-size('desktop') {
+      font-size: 3rem;
+      max-width: 1020px;
+    }
+
+    @include screen-size('mobile') {
+      font-size: 1.3rem;
+      max-width: 500px;
+    }
+  }
+
+  &__text {
+    margin-right: 5rem;
+    font-size: 1.6rem;
+    line-height: 1.6; 
+    color: vars.$gray;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    @include mont();
+
+    @include screen-size('desktop') {
+      max-width: 1020px;
+      gap: 3rem;
+    }
+
+    @include screen-size('mobile') {
+      max-width: 20rem;  
+      font-size: 1rem;
+      width: 100%;
+    }
+  }
+
+  .vividorange {
+    color: vars.$vividorange;
+  }
+
+  .orange {
+    color: vars.$orange;
+  }
+}

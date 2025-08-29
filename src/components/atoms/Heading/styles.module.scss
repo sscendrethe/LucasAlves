@@ -1,0 +1,13 @@
+@use '../../../styles/_mixins' as *;
+
+.heading {
+  @include headings();
+
+  @include colors();
+
+  @include align();
+
+  @include weight();
+
+  @include mont();
+}

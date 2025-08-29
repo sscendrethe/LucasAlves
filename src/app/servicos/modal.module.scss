@@ -1,0 +1,65 @@
+/* src/app/servicos/modal.module.scss */
+.backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.35);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* NÃO cria barras no overlay */
+  overflow: clip;           /* moderno */
+  /* fallback */
+  /* overflow: hidden; */
+
+  /* melhora UX ao impedir elastic scroll */
+  overscroll-behavior: contain;
+  z-index: 1000;
+}
+
+/* só o Presentation, sem “caixa” */
+.content {
+  position: relative;
+  background: transparent;
+  padding: 0;
+  border: 0;
+  box-shadow: none;
+  border-radius: 0;
+
+  /* CLAMPA para caber sempre na viewport, sem barras */
+  width: min(1200px, 92vw);
+  max-width: 92vw;
+  max-height: 88vh;
+  /* NÃO mostra barras dentro do content */
+  overflow: clip;           /* moderno */
+  /* fallback */
+  /* overflow: hidden; */
+
+  /* se o Presentation tiver imagens ou grids largos, evita quebra horizontal */
+  box-sizing: border-box;
+
+  /* garantir que elementos internos não estourem a largura */
+  :where(img, video, canvas, svg) {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+/* X flutuante no topo direito */
+.close {
+  position: fixed;
+  top: 12px;
+  right: 12px;
+  width: 36px;
+  height: 36px;
+  border-radius: 999px;
+  border: 1px solid #ddd;
+  background: #fff;
+  font-size: 18px;
+  cursor: pointer;
+  z-index: 1001;
+}
+

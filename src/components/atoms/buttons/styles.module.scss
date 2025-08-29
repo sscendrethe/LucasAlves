@@ -1,0 +1,78 @@
+@use '../../../styles/_mixins' as *;
+@use '../../../styles/variables' as vars;
+
+.button,
+.link {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  border: none;
+  font-size: 1.6rem;
+  line-height: 2rem;
+  transition: all 0.3s ease-in-out;
+
+  @include screen-size('mobile') {
+    font-size: 1.2rem;
+
+  }
+
+  @include mont();
+  @include buttonVariants();
+  @include buttonWithIconDirections();
+}
+
+.button {
+  padding: 1.6rem;
+  cursor: pointer;
+  border-radius: 0.8rem;
+  font-weight: 700;
+  font-size: 1.6rem;
+  justify-content: center;
+  padding: 1rem 1.4rem;
+
+    @include screen-size('mobile') {
+    padding: 1rem 1.2rem; // botão mais compacto no mobile
+    font-size: 1rem;
+    height: 2rem;
+  }
+    @include screen-size('tablet') {
+    padding: 1rem 1.4rem; // botão mais compacto no mobile
+    font-size: 1.4rem;
+  }
+
+  &--disabled {
+    background-color: vars.$softgray;
+    color: vars.$white;
+    border-color: vars.$white;
+    cursor: none;
+
+    &:hover {
+      background-color: vars.$white;
+      color: vars.$softgray;
+    }
+  }
+}
+
+.link {
+  @include weight();
+
+  &:hover {
+    font-weight: 400;
+  }
+
+  &--buttonStyle {
+    @extend .button;
+
+    @include screen-size('desktop') {
+      font-size: 1.6rem;
+    }
+    @include screen-size('mobile') {
+      font-size: 1.2rem;
+      flex-direction: column;
+    }
+
+    &:hover {
+      text-decoration: unset;
+    }
+  }
+}

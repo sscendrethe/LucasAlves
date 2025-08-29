@@ -1,0 +1,46 @@
+@use '../../../styles/_mixins' as *;
+@use '../../../styles/variables' as vars;
+
+.whats {
+  position: fixed;
+  right: calc(1.2rem + env(safe-area-inset-right, 0));
+  bottom: calc(1.2rem + env(safe-area-inset-bottom, 0));
+  z-index: 9999;
+
+  display: inline-flex;
+  align-items: center;
+  gap: .6rem;
+
+  padding: .9rem 1.2rem;
+  border-radius: 9999px;
+  text-decoration: none;
+
+  background: #{if(global-variable-exists('$whatsapp', 'vars'), vars.$whatsapp, #25D366)};
+  color: vars.$white;
+
+  box-shadow: 0 10px 20px rgba(0,0,0,.18), 0 6px 6px rgba(0,0,0,.12);
+  transform: translateZ(0);
+  transition: transform .15s ease, box-shadow .15s ease, opacity .15s ease;
+  @include mont();
+  font-weight: 700;
+
+  &:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 12px 24px rgba(0,0,0,.22), 0 8px 8px rgba(0,0,0,.14);
+  }
+
+  &:active { transform: translateY(0); }
+
+  &__icon {
+    width: 22px;
+    height: 22px;
+  }
+
+  &__label {
+    font-size: 1.4rem;
+    line-height: 1;
+    @include screen-size('mobile') { display: none; } /* no mobile só o ícone */
+  }
+
+  /* se preferir só o ícone em qualquer tela, pode esconder via classe no componente */
+}

@@ -1,0 +1,88 @@
+@use '../../../styles/_mixins' as *;
+@use '../../../styles/variables' as vars;
+
+$panel-radius: 20px;
+$panel-shadow: 0 18px 40px -12px rgba(0,0,0,.18);
+
+.article {
+  max-width: 1500px;
+  width: 100%;
+  margin: 10 auto;
+  box-sizing: border-box;      /* <<< padding dentro do max-width */
+  position: relative;
+  border-radius: $panel-radius;
+  overflow: hidden;
+  padding: (2rem 5rem 2rem 5rem); /* mesmo padding do Case */
+  margin-top:-1rem;
+  box-shadow: $panel-shadow;
+  @include screen-size('mobile') {
+    margin-top: 0rem;
+    padding: (2rem 2rem 2rem 3rem)
+  }
+  background:
+    radial-gradient(120% 100% at 0% 0%,
+      rgba(vars.$orange, .08) 0%,
+      rgba(vars.$orange, .04) 28%,
+      rgba(vars.$orange, 0) 60%),
+    linear-gradient(180deg, rgba(0,0,0,.02) 0%, rgba(0,0,0,0) 60%),
+    vars.$gray;
+
+  &::after {
+    content: '';
+    position: absolute; inset: 0;
+    pointer-events: none; border-radius: inherit;
+    box-shadow: inset 0 1px 0 rgba(#fff,.7), inset 0 -1px 0 rgba(0,0,0,.04);
+  }
+
+  /* ---- seu conteúdo original (pode manter) ---- */
+  display: flex;
+  flex-direction: column;
+
+  .article__contentWrapper {
+    display: flex; flex-direction: column;
+    width: 100%;
+    max-width: 100%;          /* <<< não estrangular dentro do painel */
+    @include screen-size('desktop') {
+      flex-direction: row;
+      align-items: center;
+      justify-content: flex-start;
+    }
+    @include screen-size('mobile') { font-size: 1.2rem; max-width: 600px;}
+    @include screen-size('tablet') { font-size: 3rem; max-width: 800px; }
+  }
+
+  .article__mediaWrapper {
+    display: flex; flex-direction: column; justify-content: flex-start; align-items: center;
+    width: 100%; flex: 1;
+  }
+
+  &__heading {
+    display: flex; flex-direction: column; flex: 1; line-height: 1.1;
+    @include screen-size('desktop') { font-size: 3rem; max-width: 900px; }
+    @include screen-size('mobile') { font-size: 1.5rem; max-width: 500px; }
+  }
+
+  &__subVideoRow {
+    display: flex; flex-direction: column; width: 100%;
+    @include screen-size('desktop') {
+      flex-direction: row; justify-content: space-between; align-items: center;
+    }
+  }
+
+  &__text {
+    margin-right: 5rem;
+    font-size: 1.2rem; line-height: 1.4; color: vars.$white;
+    overflow-wrap: break-word; word-wrap: break-word; @include mont();
+    @include screen-size('desktop') { max-width: 550px; }
+    @include screen-size('mobile')  { max-width: 20rem; font-size: 0.9rem; width: 100%; }
+  }
+
+  &__video {
+    flex: 1; width: 100%; max-width: 550px; height: 30rem;
+    @include screen-size('desktop') { margin-left: 1rem; }
+  }
+  
+}
+
+.vividorange { color: vars.$vividorange; }
+.orange { color: vars.$orange; }

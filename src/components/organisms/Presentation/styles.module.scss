@@ -1,0 +1,103 @@
+@use '../../../styles/_mixins' as *;
+@use '../../../styles/variables' as vars;
+
+.presentation {
+  display: flex;
+  justify-content: center;
+  position: relative;
+
+  &__image {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 50rem;
+    height: auto;
+    overflow: visible;
+  }
+
+  &__media {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 1rem;
+    object-fit: cover;
+  }
+
+   &__card {
+    position: absolute;
+    top: 50%;
+    right: 0rem;
+    transform: translateY(-50%);
+    background-color: rgba(190, 86, 25, 0.925);
+    color: white;
+    padding: 3rem;
+    border-radius: 0.8rem;
+    width: 30rem;
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+    @include mont();
+    @include screen-size('mobile') {
+    padding: .1rem .1rem .1rem .1rem;
+    }
+    display: flex;
+    flex-direction: column;
+
+    /* ↓ deixe título e texto mais próximos */
+    gap: .25rem; /* antes era 0.5rem */
+
+    /* tira “respiro” padrão dos headings dentro do card */
+    h1, h2, h3, h4, h5, h6 {
+      margin: 0 0 .35rem 0;   /* aproxima o próximo bloco */
+      line-height: 1.15;
+    }
+
+    @include screen-size('mobile') {
+      position: static;
+      transform: none;
+      margin-top: -2rem;
+      width: auto;
+      padding: 1rem;
+    }
+  }
+
+  /* blocos Desafio / Estratégia / Resultados */
+  &__rows {
+    display: flex;
+    flex-direction: column;
+    gap: .35rem; /* antes .6rem */
+  }
+
+  &__row {
+    /* parágrafo do item — remove margem padrão p/ colar no título */
+    margin: 0;                /* <- importante p/ aproximar do h2 */
+    color: vars.$white;
+    font-size: 0.95rem;
+    line-height: 1.45;        /* um pouco mais compacto */
+    @include mont();
+  }
+
+  &__rowLabel {
+    color: vars.$orange;
+    font-weight: 800;
+    margin-right: .35rem;
+  }
+  &__ctaInline {
+    margin-top: .4rem;         /* espaço leve após o texto */
+    font-size: 0.95rem;
+    line-height: 1.45;
+    color: vars.$white;
+    @include mont();
+  }
+
+  &__inlineLink {
+    font-weight: 800;          /* negrito */
+    color: inherit;            /* mantém a cor do card (branco) */
+    text-decoration: none;     /* sem sublinhado por padrão */
+    text-underline-offset: 2px;
+    transition: text-decoration-color .2s ease, color .2s ease;
+
+    &:hover {
+      text-decoration: underline; 
+      color: vars.$vividorange; /* sublinha no hover */
+    }
+  }
+}

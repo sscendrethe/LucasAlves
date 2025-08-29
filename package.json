@@ -12,16 +12,22 @@
     "build-storybook": "storybook build"
   },
   "dependencies": {
+    "@formspree/react": "^3.0.0",
     "@tabler/icons-react": "^3.34.0",
+    "antd": "^5.27.0",
     "next": "15.3.1",
     "prettier": "^3.5.3",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "sass": "^1.89.1"
+    "react-hook-form": "^7.60.0",
+    "sass": "^1.89.1",
+    "swiper": "^11.2.10",
+    "uuid": "^11.1.0"
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^4.0.0",
     "@storybook/addon-a11y": "^9.0.5",
+    "@storybook/addon-actions": "^9.0.8",
     "@storybook/addon-docs": "^9.0.5",
     "@storybook/addon-onboarding": "^9.0.5",
     "@storybook/addon-vitest": "^9.0.5",

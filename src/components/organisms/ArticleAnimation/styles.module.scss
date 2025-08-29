@@ -1,0 +1,130 @@
+@use '../../../styles/_mixins' as *;
+@use '../../../styles/variables' as vars;
+
+.articleanimation {
+  display: flex;
+  flex-direction: column;
+  @include layoutDefault();
+
+  @include screen-size('desktop') {
+    align-items: flex-start;
+    padding: 0.1em 3.5rem 1rem 8rem;
+    margin-top:-2rem;
+  }
+    @include screen-size('mobile') {
+    align-items: flex-start;
+    padding: .5rem 5rem 5rem 8rem;
+  }
+
+  .articleanimation__contentWrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 1050px;
+
+    @include screen-size('desktop') {
+      flex-direction: row;  
+      align-items: center;
+      justify-content: flex-start;
+    }
+
+    @include screen-size('mobile') {
+      font-size: 1rem;
+      max-width: 100%;
+      align-items: center;
+      text-align: center;
+      gap: 1rem;
+    }
+
+    @include screen-size('tablet') {
+      font-size: 3rem;
+      max-width: 800px;
+    }
+  }
+
+  .articleanimation__mediaWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    margin-top: 1rem;
+    flex: 1;
+  }
+
+  &__heading {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+
+    @include screen-size('desktop') {
+      font-size: 3rem;
+      max-width: 900px;
+    }
+
+    @include screen-size('mobile') {
+      font-size: 1.2rem;
+      max-width: 100%;
+      line-height: 1.3;
+    }
+  }
+
+  &__subVideoRow {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    @include screen-size('desktop') {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    @include screen-size('mobile') {
+      gap: 1rem;
+      align-items: center;
+    }
+  }
+
+  &__text {
+    margin-right: 5rem;
+    font-size: 1.2rem;
+    line-height: 1.6; 
+    color: vars.$white;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    @include mont();
+
+    @include screen-size('desktop') {
+      max-width: 550px;
+    }
+
+    @include screen-size('mobile') {
+      margin-right: 0;
+      max-width: 100%;  
+      font-size: 1rem;
+      line-height: 1.5;
+      text-align: center;
+    }
+  }
+
+  &__video {
+    flex: 1;
+    width: 100%;
+    max-width: 900px;
+    height: 30rem;
+
+    @include screen-size('mobile') {
+      max-width: 100%;
+      height: auto;
+      aspect-ratio: 16 / 9; /* vídeo responsivo */
+      border-radius: 12px;
+      margin-top: 1rem;
+    }
+  }
+}
+
+.vividorange { color: vars.$vividorange; }
+.orange      { color: vars.$orange; }
+.blue        { color: vars.$blue; }
+.darkorange  { color: vars.$darkorange; }

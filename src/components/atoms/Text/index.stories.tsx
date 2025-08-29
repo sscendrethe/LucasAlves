@@ -5,6 +5,13 @@ export default {
   args: {
     align: 'center',
     children: 'teste',
+    color: 'darkgray',
+    weight: '100',
   },
 }
-export const Default = {}
+export const Default = {
+  args: {
+    weight: '100',
+    color: 'darkgray',
+  },
+}

@@ -1,0 +1,10 @@
+.container {
+  position: relative;
+}
+
+.blurred {
+  filter: blur(6px);
+  transform: scale(0.99);
+  transition: filter .2s ease, transform .2s ease;
+  pointer-events: none; /* evita cliques no fundo enquanto o modal está aberto */
+}

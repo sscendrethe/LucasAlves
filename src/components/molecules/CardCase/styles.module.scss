@@ -1,0 +1,66 @@
+@use '../../../styles/_mixins' as *;
+@use '../../../styles/variables' as vars;
+
+.card {
+  display: flex;
+  flex-direction: column;
+  border-radius: 0.8rem;
+  overflow: hidden;
+  height: 40rem;
+  width: 45rem;
+  position: relative;
+  padding: 2.4rem;
+
+  &__image {
+    transition: all 0.8s;
+    background: center/cover no-repeat;
+    position: absolute;
+    inset: 0;
+
+    &:hover {
+      transform: scale(1.08);
+    }
+
+    &::before {
+      background: linear-gradient(
+        0deg,
+        rgb(197, 149, 128) 0%,
+        rgba(255, 255, 255, 0.4) 100%
+      );
+      inset: 0;
+      content: '';
+      position: absolute;
+    }
+  }
+
+  &__textContainer {
+    color: vars.$orange;
+    position: inherit;
+    height: inherit;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+
+  &__heading {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-bottom: 0.9rem;
+
+    @include screen-size('desktop') {
+      margin-bottom: 2.9rem;
+    }
+  }
+
+  &__title {
+    @include mont();
+    font-size: 1.8rem;
+    font-weight: 700;
+  }
+
+  &__text {
+    @include mont();
+    font-size: 1.6rem;
+  }
+}

@@ -1,0 +1,87 @@
+@use '../../../styles/_mixins' as *;
+@use '../../../styles/variables' as vars;
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
+
+
+  &__container {
+    @include layoutDefault();
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    @include screen-size('mobile') {
+    padding: (0.5rem 1rem 1rem .1rem)
+    }
+
+    @include screen-size('desktop') {
+      flex-direction: row;
+      justify-content: center; /* reforça no desktop */
+      align-items: center;
+      padding: 1rem;
+    }
+
+    /* o nav também ocupa a largura toda e centraliza seu conteúdo */
+    nav {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;   /* centraliza itens */
+    align-items: center;
+    gap: 1rem;
+    color: vars.$darkgray;
+    @include mont();
+    list-style: none;
+    padding: 0;
+
+    /* centraliza a própria UL no container */
+    margin: 0 auto;
+
+    @include screen-size('desktop') { gap: 2rem; }
+    @include screen-size('mobile')  { gap: 0.6rem; }
+  }
+
+  &__item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+
+    @include screen-size('desktop-md') { font-size: 1.8rem; }
+    @include screen-size('mobile')     { font-size: 0.9rem; }
+  }
+
+  &__activeItem { color: vars.$orange; }
+
+  &__link {
+    color: vars.$darkgray;
+    text-decoration: none;
+
+    &:hover {
+      color: vars.$orange;
+      text-decoration: underline 0.2rem vars.$black;
+      text-underline-offset: 0.5rem;
+    }
+  }
+
+  /* ATENÇÃO: classe plural para bater com o JSX */
+  &__icons {
+    width: 100%;
+    display: flex;
+    justify-content: center; /* centraliza os ícones */
+    align-items: center;
+  }
+}
+

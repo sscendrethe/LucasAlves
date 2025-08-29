@@ -4,7 +4,12 @@ export const alignmentArgTypes = {
     options: ['right', 'center', 'left'],
   },
 }
-
+export const weightArgTypes = {
+  weight: {
+    control: { type: 'inline-radio' },
+    options: ['300', '400', '500', '600', '700', '800', '900'],
+  },
+}
 export const colorArgTypes = {
   color: {
     control: { type: 'select' },
@@ -47,5 +52,11 @@ export const backgroundColorArgTypes = {
 export const disableTable = {
   table: {
     disable: true,
+  },
+}
+export const headingsArgTypes = {
+  level: {
+    control: { type: 'select' },
+    options: ['1', '2', '3', '4', '5', '6'],
   },
 }

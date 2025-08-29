@@ -10,14 +10,21 @@ const config: StorybookConfig = {
     '@storybook/addon-docs',
     '@storybook/addon-a11y',
     '@storybook/addon-vitest',
+    '@storybook/addon-actions', 
   ],
   framework: {
     name: '@storybook/nextjs-vite',
     options: {},
   },
   staticDirs: ['../public'],
-  async viteFinal(config) {
-    return mergeConfig(config, {
+  async viteFinal(cfg) {
+    return mergeConfig(cfg, {
+      resolve: {
+        alias: {
+          'next/navigation': path.resolve(__dirname, 'mocks/next-navigation.ts'),
+          // 'next/image': path.resolve(__dirname, 'mocks/next-image.tsx'), // opcional
+        },
+      },
       css: {
         preprocessorOptions: {
           scss: {
@@ -30,3 +37,4 @@ const config: StorybookConfig = {
 }
 
 export default config
+

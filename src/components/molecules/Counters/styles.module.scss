@@ -1,0 +1,48 @@
+@use '../../../styles/variables' as vars;
+@use '../../../styles/_mixins' as *;
+
+.counters {
+  display: flex;
+  justify-content: center;
+  gap: 4rem;
+  margin-top: 4rem;
+  text-align: center;
+  flex-wrap: wrap;
+
+
+  @include screen-size('mobile'){
+    gap: 1.2rem;
+  }
+}
+
+.counterItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  &:hover {
+    transform: translateY(-5px);
+  }
+}
+
+.counter {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: vars.$orange;
+  @include mont();
+  @include screen-size('mobile'){
+    font-size: 1.2rem;
+  }
+
+}
+
+.label {
+  font-size: 1.4rem;
+  margin-top: 0.8rem;
+  color: vars.$darkgray;
+  font-weight: 500;
+  @include mont();  
+  @include screen-size('mobile'){
+    font-size: 1rem;
+  }
+  
+}

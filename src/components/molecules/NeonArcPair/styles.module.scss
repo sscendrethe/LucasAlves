@@ -1,0 +1,128 @@
+@use '../../../styles/_mixins' as *;
+@use '../../../styles/variables' as vars;
+
+.pair {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: .8rem;
+
+  @include screen-size('desktop') {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+  }
+
+  @include screen-size('mobile') {
+    grid-template-columns: repeat(2, minmax(0, 1fr)); 
+    gap: .5rem;            /* menor espaço entre cards */
+    align-items: stretch;
+  }
+}
+
+.card {
+  position: relative;
+  overflow: hidden;
+  border-radius: .8rem;
+  padding: .85rem .95rem;
+  border: 0px solid rgba(255,255,255,0.08);
+  color: vars.$white;
+  outline: none;
+  background-color: transparent;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: .75rem;
+
+  &__glow {
+    position: absolute;
+    inset: -1rem;                           
+    z-index: 0;
+  }
+
+  &__ringWrap { position: relative; z-index: 1; }
+  &__ring { display: block; }
+
+  &__icon {
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    width: 2.2rem;
+    height: 2.2rem;
+    border-radius: 9999px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 105, 25, 0.14);
+    color: vars.$orange;
+    box-shadow: 0 0 14px rgba(255, 100, 32, 0.22);
+    svg { width: 18px; height: 18px; }
+  }
+
+  &__text {
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    gap: .1rem;
+  }
+
+  &__value {
+    display: inline-flex;
+    align-items: baseline;
+    gap: .2rem;
+    font-weight: 900;
+    letter-spacing: .2px;
+    @include mont();
+  }
+
+  &__number {
+    font-size: clamp(1.4rem, 2.8vw, 1.9rem);
+    line-height: 1;
+    color: vars.$gray;
+  }
+
+  &__affix {
+    font-size: clamp(.9rem, 2vw, 1.05rem);
+    line-height: 1;
+    color: vars.$orange;
+    font-weight: 800;
+    opacity: .95;
+  }
+
+  &__label {
+    font-size: .85rem;                       
+    color: rgba(0, 0, 0, 0.85);
+    @include mont();
+    font-weight: 600;
+  }
+
+  /* ===== MOBILE AJUSTADO (mais compacto) ===== */
+  @include screen-size('mobile') {
+    padding: .5rem .6rem;   /* ainda menor */
+    gap: .4rem;
+    border-radius: .5rem;
+
+    &__icon {
+      width: 1.5rem;
+      height: 1.5rem;
+      svg { width: 12px; height: 12px; }
+    }
+
+    &__value {
+      gap: .1rem;
+      letter-spacing: .1px;
+    }
+
+    &__number {
+      font-size: clamp(1rem, 3.5vw, 1.3rem); /* número bem menor */
+      line-height: 1.1;
+    }
+
+    &__affix {
+      font-size: clamp(.7rem, 2.5vw, .85rem);
+    }
+
+    &__label {
+      font-size: .7rem;
+    }
+  }
+}
+

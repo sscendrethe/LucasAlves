@@ -1,0 +1,82 @@
+@use '../../../styles/_mixins' as *;
+@use '../../../styles/variables' as vars;
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; // centraliza conteúdo verticalmente
+  width: 12rem; // define o tamanho do quadrado
+  height: 12rem; // mesmo valor da largura
+  padding: 1rem;
+  border-radius: 0.8rem;
+  border: 0.1rem solid transparent;
+  box-shadow: 0 10px 20px rgba(255, 98, 0, 0.4);
+
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(255, 98, 0, 0.8);
+  }
+
+  @include backgroundColor();
+
+  @include screen-size('desktop') {
+    width: 16rem;
+    height: 16rem;
+    padding: 1rem;
+  }
+
+  &__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background-color: vars.$darkorange;
+
+    @include screen-size('mobile') {
+    width: 1rem;
+    height: 1rem;
+    font-size: 1rem;
+    padding: 0.8rem 0.8rem;
+  }
+  }
+
+  &__title {
+    font-size: 1.2rem;
+    text-align: center;
+    font-weight: 600;
+    line-height: 1.4rem;
+    
+
+    @include mont();
+    @include colors();
+  }
+  .card__buttonSmall {
+  display: inline-flex;          // mantém tudo em linha
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;                   // espaço entre ícone e texto
+  font-size: 0.9rem;
+  padding: 0.6rem 1rem;
+  white-space: nowrap;          // impede quebra de linha
+  width: auto;                  // deixa o botão se ajustar ao conteúdo
+  max-width: 100%;
+
+  svg {
+    width: 1rem;
+    height: 1rem;
+    flex-shrink: 0;
+  }
+
+  @include screen-size('mobile') {
+    font-size: 1rem;
+    padding: 0.8rem 1.2rem;
+  }
+}
+}

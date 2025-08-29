@@ -1,0 +1,17 @@
+[
+  [
+    { "src": "/images/empresas/01.png", "alt": "", "backgroundColor": "#990100" },
+    { "src": "/images/empresas/02.png", "alt": "", "backgroundColor": "#000000"  },
+    { "src": "/images/empresas/03.png", "alt": "", "backgroundColor": "#00306B"  }
+  ],
+  [
+    { "src": "/images/empresas/04.png", "alt": "", "backgroundColor": "#A7D9C9"  },
+    { "src": "/images/empresas/05.png", "alt": "", "backgroundColor": "#EEEEEE"  },
+    { "src": "/images/empresas/06.png", "alt": "", "backgroundColor": "#F5C400"  }
+  ],
+  [
+    { "src": "/images/empresas/09.png", "alt": "", "backgroundColor": "#3b3b3b" },
+    { "src": "/images/empresas/08.png", "alt": "", "backgroundColor": "#F5E6CC" },
+    { "src": "/images/empresas/07.png", "alt": "", "backgroundColor": "#D6E6F2" }
+  ]
+]
