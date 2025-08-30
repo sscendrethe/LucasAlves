@@ -7,3 +7,10 @@ export default function Page({ params }: { params: { service: string } }) {
   const key: ServiceKey = isService(params.service) ? params.service : "social";
   return <Presentation service={key} />;
 }
+export async function generateStaticParams() {
+  return [
+    { service: 'social' },
+    { service: 'foto' },
+    { service: 'sites' },
+  ];
+}

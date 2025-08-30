@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import { Geist, Geist_Mono } from 'next/font/google'
-import { FloatingWhatsApp } from '@/components/molecules/FloatingWhatsApp' // <- ADICIONADO
+import { FloatingWhatsApp } from '@/components/molecules/FloatingWhatsApp' 
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -29,9 +29,9 @@ export default function RootLayout({
 
         {/* Botão flutuante do WhatsApp — ajusta o número/mensagem conforme necessário */}
         <FloatingWhatsApp
-          phone="5531999999999"
-          message="Olá! Vim pelo site e gostaria de saber mais 🙂"
-          showLabel={false}          // mostra só o ícone
+          phone="5531992771911"
+          message="Olá! Vi o seu site e gostaria de impulsionar meu negócio!"
+          showLabel={false}          
         />
       </body>
     </html>

@@ -16,7 +16,7 @@ export default function Home() {
       />
 
       <Article
-        video="/videos/meeting.mp4" // coloque o arquivo em /public/videos/meeting.mp4
+        video="/videos/meeting.mp4" 
         text="A EULUKASALVES é uma empresa de marketing e publicidade em BH que combina criatividade, estratégia e tecnologia para destacar marcas por meio de branding e social media, com soluções personalizadas e foco em resultados reais."
         firstButtonLabel="Sobre mim"
         secondButtonLabel="Entre em contato"

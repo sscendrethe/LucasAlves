@@ -11,6 +11,11 @@
     align-items: flex-start;
     padding: 3rem 4rem 4rem 8rem;
   }
+      @include screen-size('mobile') {
+    align-items: flex-start;
+    padding: 3rem 1rem 1rem 6rem; 
+    margin-top:-2rem;
+  }
 
   .article__contentWrapper {
     display: flex;
@@ -141,8 +146,9 @@
   pointer-events: none;
 
   @include screen-size('mobile') {
-    inset: .6rem;
+    inset: 1rem;
     border-radius: 12px;
+    margin-left: 5rem;
   }
 }
 

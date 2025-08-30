@@ -17,7 +17,7 @@
     align-items: center;
     gap: 1.5rem;
     @include screen-size('mobile') {
-    padding: (0.5rem 1rem 1rem .1rem)
+    padding: (1rem 1rem 1rem 4rem)
     }
 
     @include screen-size('desktop') {

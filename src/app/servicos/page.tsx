@@ -55,7 +55,7 @@ export default function Servico() {
       />
 
       <ArticleAnimation
-        text="Mais de 50 marcas já confiaram na EULUKASALVES para fortalecer sua presença e identidade. Atuamos com estratégia, criatividade e um olhar personalizado para cada projeto. Seja criando do zero ou renovando a comunicação, entregamos com propósito e aquele toque especial de quem ama o que faz. E tal tal tal tal tal tal tal tal tal tal tal tal tal tal tal tal tal tal tal tal tal tal."
+        text="Mais de 50 marcas já confiaram na EULUKASALVES para fortalecer presença e identidade no digital. Atuamos com estratégia, criatividade e um olhar único para cada projeto. Seja criando do zero ou renovando a comunicação, entregamos sempre com propósito, excelência e aquele toque especial de quem realmente ama o que faz."
       />
 
       <ArticleServices
@@ -67,36 +67,36 @@ export default function Servico() {
       />
 
       <ArticleFeedbacks
-        text="Veja o que nossos clientes estão dizendo sobre nós!"
-        cardData={[
-          {
-            link: '#',
-            description: 'Excelente serviço, super recomendo!',
-            backgroundColor: 'white',
-            iconColor: 'orange',
-            author: 'João Silva',
-            company: 'Empresa XYZ',
-            rating: 5,
-          },
-          {
-            link: '#',
-            description: 'Excelente serviço, super recomendo!',
-            backgroundColor: 'white',
-            iconColor: 'orange',
-            author: 'João Silva',
-            company: 'Empresa XYZ',
-            rating: 5,
-          },
-          {
-            link: '#',
-            description: 'Excelente serviço, super recomendo!',
-            backgroundColor: 'white',
-            iconColor: 'orange',
-            author: 'João Silva',
-            company: 'Empresa XYZ',
-            rating: 5,
-          },
-        ]}
+          text="Veja o que nossos clientes estão dizendo sobre nós!"
+          cardData={[
+            {
+              link: '#',
+              description: 'Lucas ajudou a profissionalizar a comunicação da transportadora. Hoje mostramos melhor os serviços e conquistamos novos clientes.',
+              backgroundColor: 'white',
+              iconColor: 'orange',
+              author: 'Gilvan',
+              company: 'Gilvan Transportes',
+              rating: 5,      
+            },
+                        {
+              link: '#',
+              description: 'Lucas trouxe comunicação acolhedora e profissional às minhas redes, unindo seriedade e leveza. Recomendo demais!',
+              backgroundColor: 'white',
+              iconColor: 'orange',
+              author: 'Marina Botelho',
+              company: 'Psicóloga',
+              rating: 5,      
+            },
+                        {
+              link: '#',
+              description: 'Meu trabalho sempre foi visual, mas com Lucas consegui destacar serviços. Criativo, comprometido e gera resultados. Indico de olhos fechados!',
+              backgroundColor: 'white',
+              iconColor: 'orange',
+              author: 'Paolo',
+              company: 'BH drones',
+              rating: 5,      
+            },
+          ]}
       />
 
       <Footer

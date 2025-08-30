@@ -10,6 +10,11 @@
     align-items: flex-start;
     padding: 1rem 1rem 1rem 8rem;
   }
+      @include screen-size('mobile') {
+    align-items: flex-start;
+    padding: 3rem 1rem 1rem 6rem; 
+    margin-top:-2rem;
+  }
 
   .article__contentWrapper {
     display: flex;

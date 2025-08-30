@@ -4,13 +4,19 @@
 .hero {
   @include layoutDefault();
   display: flex;
+  align-items: flex-start;
   flex-direction: column;
   gap: 1rem;
-  padding: 1rem 1rem 3rem 6rem;
+  padding: 1rem 1rem 3rem 1rem;
 
   @include screen-size('desktop') {
     align-items: flex-start;
     padding: 0rem 1rem 1rem 8rem; 
+    margin-top:-2rem;
+  }
+    @include screen-size('mobile') {
+    align-items: flex-start;
+    padding: 3rem 1rem 1rem 6rem; 
     margin-top:-2rem;
   }
   .hero__video { pointer-events: none; }

@@ -6,12 +6,4 @@
   filter: blur(6px);
   transform: scale(0.99);
   transition: filter .2s ease, transform .2s ease;
-
-}
-:root {
-  --font-mont: 'Montserrat', sans-serif;
-}
-
-.container {
-  font-family: var(--font-mont);
 }

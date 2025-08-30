@@ -92,8 +92,8 @@ export const Hero = ({
             {/* ⟵ Substituição dos Counters pelo NeonArcPair (apenas 2 itens) */}
             <NeonArcPair
               items={[
-                { end: 150, prefix: '+', label: 'Clientes', icon: IconUsers, duration: 2500 },
-                { end: 45,  prefix: '+', label: 'Projetos', icon: IconSparkles, duration: 2000 },
+                { end: 100, prefix: '+', label: 'Clientes', icon: IconUsers, duration: 2500 },
+                { end: 150,  prefix: '+', label: 'Projetos', icon: IconSparkles, duration: 2000 },
               ]}
               size={100}
               stroke={8}
