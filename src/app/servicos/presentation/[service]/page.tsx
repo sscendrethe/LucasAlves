@@ -1,16 +1,33 @@
 import Presentation, { type ServiceKey } from "@/components/organisms/Presentation";
 
+// Type guard para validar o service
 const isService = (s: string): s is ServiceKey =>
   s === "social" || s === "foto" || s === "sites";
 
-export default function Page({ params }: { params: { service: string } }) {
-  const key: ServiceKey = isService(params.service) ? params.service : "social";
+// Tipagem do PageProps
+interface PageProps {
+  params: Promise<{
+    service: ServiceKey | string;
+  }>;
+  searchParams?: Promise<Record<string, string | string[] | undefined>>;
+}
+
+// Componente Page
+export default async function Page({ params }: PageProps) {
+  const resolvedParams = await params; // resolve a Promise
+  const key: ServiceKey = isService(resolvedParams.service) ? resolvedParams.service : "social";
+
   return <Presentation service={key} />;
 }
-export async function generateStaticParams() {
+
+// Geração de parâmetros estáticos
+export async function generateStaticParams(): Promise<{ service: ServiceKey }[]> {
   return [
-    { service: 'social' },
-    { service: 'foto' },
-    { service: 'sites' },
+    { service: "social" },
+    { service: "foto" },
+    { service: "sites" },
   ];
 }
+
+
+
