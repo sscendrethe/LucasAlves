@@ -1,11 +1,12 @@
-import Presentation, { type ServiceKey } from "@/components/organisms/Presentation";
+// src/app/servicos/@modal/presentation/[service]/page.tsx
+import { Presentation, type ServiceKey } from "@/components/organisms/Presentation";
 import ModalShell from "@/app/servicos/@modal/ModalShell";
 
 // Type guard para validar o service
 const isService = (s: string): s is ServiceKey =>
   s === "social" || s === "foto" || s === "sites" || s === "casea" || s === "caseb" || s === "casec";
 
-// Tipagem do PageProps do Next App Router
+// Tipagem do PageProps
 interface PageProps {
   params: Promise<{
     service: ServiceKey | string;
@@ -13,7 +14,7 @@ interface PageProps {
   searchParams?: Promise<Record<string, string | string[] | undefined>>;
 }
 
-// Componente Modal
+// Componente ModalPresentation
 export default async function ModalPresentation({ params }: PageProps) {
   const resolvedParams = await params; // resolve a Promise
   const key: ServiceKey = isService(resolvedParams.service) ? resolvedParams.service : "social";
@@ -36,3 +37,4 @@ export async function generateStaticParams(): Promise<{ service: ServiceKey }[]>
     { service: "casec" },
   ];
 }
+

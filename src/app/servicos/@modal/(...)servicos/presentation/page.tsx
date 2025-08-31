@@ -1,4 +1,4 @@
-// Server Component (sem "use client")
+// src/app/servicos/@modal/presentation/[service]/page.tsx
 import { Presentation, type ServiceKey } from "@/components/organisms/Presentation";
 import ModalShell from "../../ModalShell"; // sobe 2 níveis até @modal
 
@@ -16,7 +16,7 @@ interface PageProps {
 
 // Componente ModalPresentation
 export default async function ModalPresentation({ params }: PageProps) {
-  const resolvedParams = await params;
+  const resolvedParams = await params; // resolve a Promise
   const key: ServiceKey = isService(resolvedParams.service) ? resolvedParams.service : "social";
 
   return (
@@ -37,4 +37,5 @@ export async function generateStaticParams(): Promise<{ service: ServiceKey }[]>
     { service: "casec" },
   ];
 }
+
 
