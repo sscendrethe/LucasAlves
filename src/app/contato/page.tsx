@@ -17,8 +17,8 @@ export default function Home() {
         title="Fale com a gente!"
         subtext="Nós valorizamos o seu contato"
         text="Entre em contato conosco por telefone, e-mail, chat ou visite nosso escritório durante o horário comercial."
-        email="contato@empresa.com"
-        phone="+55 31 97777-7777"
+        email="eulukasalves1998@gmail.com"
+        phone="+55 31 992771711"
         leftVideo="/videos/meet.mp4"
       />
       <Footer

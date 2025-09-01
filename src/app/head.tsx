@@ -10,10 +10,8 @@ export default function Head() {
       <meta property="og:image" content="/images/logo/logo.png" />
       <meta property="og:url" content="https://eulukasalves.vercel.app/" />
       <meta property="og:type" content="website" />
-
-      {/* Favicon */}
-      <link rel="icon" href="/images/logo/logo.png" type="image/png" />
     </>
   )
 }
+
 
