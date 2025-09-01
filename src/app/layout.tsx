@@ -22,7 +22,8 @@ export const metadata: Metadata = {
     title: 'Agencia EuLukasAlves',
     description: 'Venha conhecer os nossos serviços!',
     images: 'images/logo/logo.png',
-    url: 'https://eulukasalves.vercel.app/',
+    url: 'https://eulukasalves.vercel.app/', //oração completa pra funcionar esse caraio
+    siteName: 'EuLukasAlves',
     type: 'website',
   },
 }
