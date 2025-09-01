@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Agencia EuLukasAlves',
     description: 'Venha conhecer os nossos serviços!',
-    images: '/images/logo/logo.png',
+    images: '[/images/logo/logo.png]',
     url: 'https://eulukasalves.vercel.app/',
     type: 'website',
   },
