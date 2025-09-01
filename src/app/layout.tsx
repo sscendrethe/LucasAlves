@@ -19,10 +19,10 @@ export const metadata: Metadata = {
     icon: '/app/icon.png', 
   },
   openGraph: {
-    title: 'Agência EuLukasAlves',
+    title: 'Agência EuLukasAlves', //oração completa pra funcionar esse caraio
     description: 'Venha conhecer os nossos serviços!',
     images: 'images/logo/logo.png',
-    url: 'https://eulukasalves.vercel.app/', //oração completa pra funcionar esse caraio
+    url: 'https://eulukasalves.vercel.app/', 
     siteName: 'EuLukasAlves',
     type: 'website',
   },
