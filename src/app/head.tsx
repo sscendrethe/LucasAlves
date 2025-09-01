@@ -1,7 +1,7 @@
 export default function Head() {
   return (
     <>
-      <title>Agencia EuLukasAlves</title>
+      <title>Agência EuLukasAlves</title> {/*Oremos*/}
       <meta name="description" content="Venha conhecer os nossos serviços!" />
 
       {/* Open Graph */}
