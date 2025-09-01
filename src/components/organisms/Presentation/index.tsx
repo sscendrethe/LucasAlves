@@ -75,7 +75,7 @@ const CONTENT: Record<ServiceKey, Content> = {
       challenge:
         "A clínica precisava se diferenciar em um mercado altamente competitivo e transmitir segurança em temas sensíveis da cirurgia plástica.",
       strategy:
-        "Criação de um conteúdo humanizado, com foco em confiança, ética e cuidado real com os pacientes. Além disso, foram produzidos posts informativos sobre procedimentos, cuidados no pré e pós-operatório e curiosidades, sempre com uma comunicação leve e profissional.",
+        "Criação de um conteúdo humanizado, com foco em confiança, ética e cuidado real. Foram produzidos posts informativos sobre procedimentos, cuidados no pré e pós-operatório e curiosidades, com comunicação leve e profissional.",
       results:
         "A clínica ganhou relevância digital, fortaleceu a relação de confiança com seus pacientes e passou a ser vista como referência em cirurgia plástica segura e de qualidade, atraindo novos públicos de forma orgânica.",
     },
